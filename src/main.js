@@ -1,39 +1,36 @@
-const backgroundModal = document.querySelector(".modal");
 
-const formLoginModal = document.querySelector(".form-login-modal");
-
-const formLoginCloseBtn = document.querySelector(".form-login-close-btn");
-
-const formLoginOpen = document.querySelector(".auth-item-login");
-
-const formRegisterOpen = document.querySelector(" .auth-item-register");
-
-const formRegister = document.querySelector(".form-register-modal");
-
-const formRegisterCloseBtn = document.querySelector(".form-register-close-btn");
+const refs = {
+    backgroundModal: document.querySelector(".modal"),
+    formLoginModal: document.querySelector(".form-login-modal"),
+    formLoginCloseBtn: document.querySelector(".form-login-close-btn"),
+    formLoginOpen: document.querySelector(".auth-item-login"),
+    formRegisterOpen: document.querySelector(".auth-item-register"),
+    formRegister: document.querySelector(".form-register-modal"),
+    formRegisterCloseBtn: document.querySelector(".form-register-close-btn"),
+}
 
 const openModal = (modal) => {
-  modal.classList.remove("is-hidden");
-  backgroundModal.classList.remove("is-hidden");
+    modal.classList.remove("is-hidden");
+    refs.backgroundModal.classList.remove("is-hidden");
 };
 
 const closeModal = (modal) => {
-  modal.classList.add("is-hidden");
-  backgroundModal.classList.add("is-hidden");
+    modal.classList.add("is-hidden");
+    refs.backgroundModal.classList.add("is-hidden");
 };
 
-formLoginOpen.addEventListener("click", () => {
-  openModal(formLoginModal);
+refs.formLoginOpen.addEventListener("click", () => {
+    openModal(refs.formLoginModal);
 });
 
-formLoginCloseBtn.addEventListener("click", () => {
-  closeModal(formLoginModal);
+refs.formLoginCloseBtn.addEventListener("click", () => {
+    closeModal(refs.formLoginModal);
 });
 
-formRegisterOpen.addEventListener("click", () => {
-  openModal(formRegister);
+refs.formRegisterOpen.addEventListener("click", () => {
+    openModal(refs.formRegister);
 });
 
-formRegisterCloseBtn.addEventListener("click", () => {
-  closeModal(formRegister);
+refs.formRegisterCloseBtn.addEventListener("click", () => {
+    closeModal(refs.formRegister);
 });
