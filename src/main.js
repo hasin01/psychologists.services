@@ -1,4 +1,3 @@
-
 const refs = {
     backgroundModal: document.querySelector(".modal"),
     formLoginModal: document.querySelector(".form-login-modal"),
@@ -9,16 +8,29 @@ const refs = {
     formRegisterCloseBtn: document.querySelector(".form-register-close-btn"),
 }
 
+
+
+const handelKeyDown = (e) => {
+        if(e.keyCode === 27) {
+            closeModal(refs.formLoginModal);
+            closeModal(refs.formRegister);
+        } 
+    
+}
+
+
 const openModal = (modal) => {
-    modal.classList.remove("is-hidden");
-    refs.backgroundModal.classList.remove("is-hidden");
+    modal.classList.remove("is-hidden-modal");
+    refs.backgroundModal.classList.remove("is-hidden-modal");
+    document.addEventListener('keydown', handelKeyDown); 
+
 };
 
 const closeModal = (modal) => {
-    modal.classList.add("is-hidden");
-    refs.backgroundModal.classList.add("is-hidden");
+    modal.classList.add("is-hidden-modal");
+    refs.backgroundModal.classList.add("is-hidden-modal");
+    document.removeEventListener('keydown',handelKeyDown);
 };
-
 
 if (refs.formLoginOpen) {
     refs.formLoginOpen.addEventListener("click", () => {
@@ -43,3 +55,17 @@ if (refs.formRegisterCloseBtn) {
         closeModal(refs.formRegister);
     });
 }
+
+
+if(refs.backgroundModal){
+
+    refs.backgroundModal.addEventListener("click", (event) => {
+        if (event.target === refs.backgroundModal) {
+            closeModal(refs.formLoginModal);
+            closeModal(refs.formRegister);
+        }
+    });
+}
+
+
+
