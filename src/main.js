@@ -19,18 +19,27 @@ const closeModal = (modal) => {
     refs.backgroundModal.classList.add("is-hidden");
 };
 
-refs.formLoginOpen.addEventListener("click", () => {
-    openModal(refs.formLoginModal);
-});
 
-refs.formLoginCloseBtn.addEventListener("click", () => {
-    closeModal(refs.formLoginModal);
-});
+if (refs.formLoginOpen) {
+    refs.formLoginOpen.addEventListener("click", () => {
+        openModal(refs.formLoginModal);
+    });
+}
 
-refs.formRegisterOpen.addEventListener("click", () => {
-    openModal(refs.formRegister);
-});
+if (refs.formLoginCloseBtn) {
+    refs.formLoginCloseBtn.addEventListener("click", () => {
+        closeModal(refs.formLoginModal);
+    });
+}
 
-refs.formRegisterCloseBtn.addEventListener("click", () => {
-    closeModal(refs.formRegister);
-});
+if (refs.formRegisterOpen) {
+    refs.formRegisterOpen.addEventListener("click", () => {
+        openModal(refs.formRegister);
+    });
+}
+
+if (refs.formRegisterCloseBtn) {
+    refs.formRegisterCloseBtn.addEventListener("click", () => {
+        closeModal(refs.formRegister);
+    });
+}
