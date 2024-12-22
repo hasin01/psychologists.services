@@ -50,8 +50,8 @@ button {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 header {
@@ -142,7 +142,7 @@ header {
 }
 
 .main-button::after {
-  content: url(/src/img/Arrow.svg);
+  content: url(img/Arrow.svg);
   display: inline-block;
   margin-left: 18px;
 }
@@ -151,8 +151,7 @@ header {
 .main-button:focus {
   background-color: var(--button-hover);
 }
-.main-img {
-}
+
 .main-img-wrapper {
   position: relative;
 }
@@ -201,7 +200,7 @@ header {
 .icon-user {
   border-radius: 10px;
   background: rgb(251, 199, 94);
-  transform: rotate(15deg);
+  transform: rotate(35deg);
   width: 40px;
   height: 40px;
   display: flex;
@@ -209,7 +208,7 @@ header {
   justify-content: center;
   position: absolute;
   top: 38px;
-  right: -35px;
+  right: -20px;
 }
 .icon-question {
   border-radius: 10px;
@@ -311,7 +310,7 @@ padding: 16px;
 }
 
 .form-close-btn {
-    background-image: url("/src/img/clouse-btn.svg");
+    background-image: url("img/clouse-btn.svg");
     background-size: contain; 
     background-repeat: no-repeat; 
     position: absolute;
