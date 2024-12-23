@@ -5,8 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/psychologists.services/assets/main-bKaHCSVu.js"></script>
-    <link rel="stylesheet" crossorigin href="/psychologists.services/assets/main-CyUaU2WI.css">
+    <script type="module" crossorigin src="/psychologists.services/assets/vendor-BzXVXbKg.js"></script>
+    <script type="module" crossorigin src="/psychologists.services/assets/main-1n1Agg1S.js"></script>
+    <link rel="stylesheet" crossorigin href="/psychologists.services/assets/main-BsS9yOuF.css">
   </head>
   <body class="background-body">
     <header>
@@ -16,6 +17,8 @@
           <ul class="nav-list">
             <li class="nav-list-item"><a href="index.html">Home</a></li>
             <li class="nav-list-item"><a href="psychologists.html">Psychologists</a></li>
+            <li class="nav-list-item nav-list-item-favorites"><a href="favorites.html">Favorites</a></li>
+
           </ul>
         </nav>
         <div class="auth-wrapper is-hidden">
@@ -29,9 +32,9 @@
             Registration
           </button>
         </div>
-        <div class="user-info">
+        <div class="user-info is-hidden">
           <div class="user-icon"><img src="data:image/svg+xml,%3csvg%20width='16.000000'%20height='16.000000'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3cdesc%3e%20Created%20with%20Pixso.%20%3c/desc%3e%3cdefs/%3e%3cpath%20id='Vector'%20d='M8%200C9.06%200%2010.07%200.42%2010.82%201.17C11.57%201.92%2012%202.93%2012%204C12%205.06%2011.57%206.07%2010.82%206.82C10.07%207.57%209.06%208%208%208C6.93%208%205.92%207.57%205.17%206.82C4.42%206.07%204%205.06%204%204C4%202.93%204.42%201.92%205.17%201.17C5.92%200.42%206.93%200%208%200ZM8%2010C12.42%2010%2016%2011.79%2016%2014L16%2016L0%2016L0%2014C0%2011.79%203.57%2010%208%2010Z'%20fill='%23FBFBFB'%20fill-opacity='1.000000'%20fill-rule='nonzero'/%3e%3c/svg%3e" alt=""></div>
-          <div class="user-name">Ilona</div>
+          <div class="user-name"></div>
           <button class="user-logout">Log out</button>
         </div>
       </div>
@@ -72,9 +75,9 @@
 <div class="form-wrapper form-login-modal is-hidden-modal">
   <h3 class="form-title">Log In</h3>
   <p class="form-subtitle">Welcome back! Please enter your credentials to access your account and continue your search for a psychologist.</p>
-  <form action="" class="form-login">
- <input class="form-email-input" type="email" name="email" placeholder="Email" >
-  <input class="form-password-input" type="password" name="email" placeholder="Password">
+  <form action="" class="form-modal form-login">
+ <input class="form-email-input form-email-input-login-js" type="email" name="email" placeholder="Email" >
+  <input class="form-password-input form-password-input-login-js" type="password" name="email" placeholder="Password">
   <button class="form-submit" type="submit">Log In</button>
   
   </form>
@@ -84,11 +87,12 @@
 <div class="form-wrapper form-register-modal is-hidden-modal ">
   <h3 class="form-title">Registration</h3>
   <p class="form-subtitle">Thank you for your interest in our platform! In order to register, we need some information. Please provide us with the following information.</p>
-  <form action="" class="form-login">
- <input class="form-email-input" type="text" name="name" placeholder="Name" >
+  <form action="" class="form-modal form-registration ">
+ <input class="form-email-input form-name-input-register-js" type="text" name="name" placeholder="Name" >
 
- <input class="form-email-input" type="email" name="email" placeholder="Email" >
-  <input class="form-password-input" type="password" name="email" placeholder="Password">
+ <input class="form-email-input form-email-input-register-js " type="email" name="email" placeholder="Email" >
+  <input class="form-password-input form-password-input-register-js" type="password" name="email" placeholder="Password">
+ 
   <button class="form-submit" type="submit">Sign Up</button>
   
   </form>
