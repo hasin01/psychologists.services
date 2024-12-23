@@ -22,27 +22,34 @@ const refs = {
   userName: document.querySelector(".user-name"),
   signOutBtn: document.querySelector(".user-logout"),
   navList: document.querySelector(".nav-list"),
+
+  navHome: document.querySelector(".nav-home"),
+  navPsychologists: document.querySelector(".nav-psychologist"),
+  navFavorites: document.querySelector(".nav-favorites"),
+  pageFavorites: document.querySelector(".nav-list-item-favorites"),
 };
 
-const handelKeyDown = (e) => {
+const handleKeyDown = (e) => {
   if (e.keyCode === 27) {
-    closeModal(refs.formLoginModal);
-    closeModal(refs.formRegisterModal);
+    closeAllModals();
   }
 };
 
 const openModal = (modal) => {
   modal.classList.remove("is-hidden-modal");
   refs.backgroundModal.classList.remove("is-hidden-modal");
-  document.addEventListener("keydown", handelKeyDown);
+  document.addEventListener("keydown", handleKeyDown);
 };
 
 const closeModal = (modal) => {
   modal.classList.add("is-hidden-modal");
   refs.backgroundModal.classList.add("is-hidden-modal");
-  document.removeEventListener("keydown", handelKeyDown);
+  document.removeEventListener("keydown", handleKeyDown);
 };
-
+const closeAllModals = () => {
+  closeModal(refs.formLoginModal);
+  closeModal(refs.formRegisterModal);
+};
 if (refs.formLoginOpen) {
   refs.formLoginOpen.addEventListener("click", () => {
     openModal(refs.formLoginModal);
@@ -84,7 +91,7 @@ if (refs.formRegister) {
     const name = refs.registerNameInput.value;
     try {
       await register(email, password, name);
-      monitorAuthState(userName); 
+      monitorAuthState(userName);
       closeModal(refs.formRegisterModal);
     } catch (error) {
       alert("Registration failed");
@@ -114,22 +121,49 @@ const userName = (user) => {
       refs.userInfo.style.display = "flex";
       refs.userName.textContent = user.displayName;
       refs.authBtn.classList.add("is-hidden");
-
+      refs.pageFavorites.classList.remove("is-hidden");
     } else {
       return;
     }
   } else {
     refs.userInfo.style.display = "none";
     refs.userName.textContent = "";
+    refs.authBtn.classList.remove("is-hidden-modal");
     refs.authBtn.classList.remove("is-hidden");
+    refs.pageFavorites.classList.add("is-hidden");
+
+
+    
   }
 };
 
-
 if (refs.signOutBtn) {
   refs.signOutBtn.addEventListener("click", () => {
+   
     signOutUser();
+
+
   });
 }
 
 monitorAuthState(userName);
+
+
+switch (window.location.pathname) {
+  case "/psychologists.services/index.html":
+refs.navHome.classList.add("nav-list-item-active"); 
+    break;
+
+  case "/psychologists.services/psychologists.html":
+   refs.navPsychologists.classList.add("nav-list-item-active");
+    break;
+
+  case "/psychologists.services/favorites.html":
+    refs.navFavorites.classList.add("nav-list-item-active");
+    break;
+
+  default:
+    break;
+}
+
+

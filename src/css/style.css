@@ -85,6 +85,27 @@ header {
   gap: 40px;
 }
 
+
+.nav-list-item{
+  position: relative;
+
+}
+
+.nav-list-item-active::after {
+  content: "";
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
 .auth-wrapper {
   display: flex;
   gap: 8px;
@@ -384,3 +405,4 @@ border-radius: 30px;
   color: var(--primary-color); 
   outline: none; 
 }
+
