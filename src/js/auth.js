@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut } from "firebase/auth";
 import { auth } from "./firebase";
+import refs from "./refs";
 
 const register = async (email, password, displayName) => {
   try {
@@ -48,5 +49,36 @@ const monitorAuthState =  (updateUI) => {
     }
   });
 };
+
+
+if (refs.signOutBtn) {
+  refs.signOutBtn.addEventListener("click", () => {
+    signOutUser();
+  });
+}
+
+
+
+
+export const userName = (user) => {
+  if (user) {
+    if (user.displayName) {
+      refs.userInfo.style.display = "flex";
+      refs.userName.textContent = user.displayName;
+      refs.authBtn.classList.add("is-hidden");
+      refs.pageFavorites.classList.remove("is-hidden");
+    } else {
+      return;
+    }
+  } else {
+    refs.userInfo.style.display = "none";
+    refs.userName.textContent = "";
+    refs.authBtn.classList.remove("is-hidden-modal");
+    refs.authBtn.classList.remove("is-hidden");
+    refs.pageFavorites.classList.add("is-hidden");
+  }
+};
+monitorAuthState(userName);
+
 
 export { register, login, monitorAuthState, signOutUser };
