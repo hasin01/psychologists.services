@@ -28,6 +28,12 @@ const refs = {
   customSelectTrigger: document.querySelector(".custom-select-trigger"),
   customOption: document.querySelectorAll(".custom-option"),
   customSelect: document.querySelector(".custom-select"),
+  paginationBtn: document.querySelector(".pagination-prev"),
+  customSelect: document.querySelector(".custom-select"),
+  customSelectTrigger: document.querySelector(".custom-select-trigger"),
+  customOption: document.querySelectorAll(".custom-option"),
+  loaderWraper:document.querySelector(".loader-wrapper")
 };
+
 
 export default refs;

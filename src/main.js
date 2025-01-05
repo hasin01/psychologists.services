@@ -1,6 +1,6 @@
-import {  monitorAuthState, signOutUser } from "./js/auth";
 import refs from "./js/refs";
 import "./js/modal"
+import "./js/psycholog-sort"
 
 switch (window.location.pathname) {
   case "/psychologists.services/index.html":
