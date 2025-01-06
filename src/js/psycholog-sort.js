@@ -130,7 +130,41 @@ if (window.location.pathname === "/psychologists.services/psychologists.html") {
       </div>
     `;
 
-      listItem.querySelector(".psicholog-btn").addEventListener("click", () => {});
+    listItem.querySelector(".psicholog-btn").addEventListener("click", (e) => {
+      const cardWrapper = listItem.querySelector(".psicholog-info");
+      const reviewsElementId = 'reviews-list'; 
+      let divelement = cardWrapper.querySelector(`#${reviewsElementId}`);
+      
+      if (divelement) {
+          divelement.remove();
+      } else {
+       
+          divelement = document.createElement("ul");
+          divelement.id = reviewsElementId;
+          
+          if (el.reviews && el.reviews.length > 0) {
+              el.reviews.forEach((review, index) => {
+                  if (index < 2) {
+                      divelement.innerHTML += `
+                      <li class="profile-reviewer-item">
+                          <div class="profile-reviewer-info-wrapper">
+                              <div class="profile-reviewer-img">${review.reviewer[0]}</div>
+                              <div class="profile-reviewer-info">
+                                  <h4 class="reviews-reviewer">${review.reviewer}</h4>
+                                  <p class="reviews-rating">${review.rating}</p>
+                              </div>
+                          </div>
+                          <p class="reviews-comment">${review.comment}</p>
+                      </li>
+                      `;
+                  }
+              });
+          }
+          
+          cardWrapper.appendChild(divelement);
+      }
+  });
+  
 
       listItem.querySelector(".psicholog-favorite-btn").addEventListener("click", (i) => {
         const currentSrc = i.target.src;

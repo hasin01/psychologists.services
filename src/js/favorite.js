@@ -110,7 +110,7 @@ if (window.location.pathname === "/psychologists.services/favorites.html") {
             </div>
         `;
 
-        listItem.querySelector(".psicholog-btn").addEventListener("click", (e) => {
+        listItem.querySelector(".psicholog-btn").addEventListener("click", () => {
           const cardWrapper = listItem.querySelector(".psicholog-info");
           const reviewsElementId = 'reviews-list'; 
           let divelement = cardWrapper.querySelector(`#${reviewsElementId}`);
