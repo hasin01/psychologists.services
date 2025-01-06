@@ -32,7 +32,9 @@ const refs = {
   customSelect: document.querySelector(".custom-select"),
   customSelectTrigger: document.querySelector(".custom-select-trigger"),
   customOption: document.querySelectorAll(".custom-option"),
-  loaderWraper:document.querySelector(".loader-wrapper")
+  loaderWraper:document.querySelector(".loader-wrapper"),
+  card:document.querySelector(".psicholog-list-item"),
+  cardFavoriteBtn:document.querySelectorAll(".psicholog-favorite-btn")
 };
 
 

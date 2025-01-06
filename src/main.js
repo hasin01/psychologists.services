@@ -1,6 +1,7 @@
 import refs from "./js/refs";
 import "./js/modal"
 import "./js/psycholog-sort"
+import "./js/favorite"
 
 switch (window.location.pathname) {
   case "/psychologists.services/index.html":

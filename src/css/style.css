@@ -597,3 +597,60 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+.profile-reviewer-item {
+  margin-top: 30px;
+
+}
+.profile-reviewer-img {
+border-radius: 100px;
+background: rgba(84, 190, 150, 0.2);
+width: 44px;
+height: 44px;
+display:flex;
+justify-content: center;
+align-items: center;
+font-size: 20px;
+color: var(--green);
+
+}
+.profile-reviewer-info{
+  display: flex;
+  flex-direction: column;
+justify-content: center;}
+.profile-reviewer-info-wrapper{
+  display: flex;
+  gap: 12px;
+}
+.reviews-reviewer {
+  color: rgb(25, 26, 21);
+
+font-size: 16px;
+font-weight: 500;
+line-height: 20px;
+
+}
+.reviews-rating {
+  color: rgb(25, 26, 21);
+font-size: 14px;
+font-weight: 500;
+line-height: 18px;
+display: flex;
+gap: 15px;
+padding-top: 8px;
+}
+
+.reviews-rating::before {
+  content: url('../img//icon_star.svg');
+  display: block;
+
+}
+
+.reviews-comment {
+  color: rgba(25, 26, 21, 0.5);
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+padding-top: 16px;
+}
